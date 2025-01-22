@@ -1,8 +1,19 @@
-const Login= () => {
-    return (
+import {useNavigate,Link} from "react-router-dom"
+const Login=(p)=>{
+  const navigate = useNavigate();
+  const handleLogin = (e) =>{
+      e.preventDefault()
+      p.onLogin();
+      navigate("/");
+    }
+  return(
       <div>
-        <h2>Welcome to Login Page</h2>
+          <form onSubmit={handleLogin}>
+          <input type='text' id='text' placeholder='Enter your Email Address' /><br/>
+          <input type='password' id='text' placeholder='Enter your Password' /><br/>
+          <input type='submit'></input>
+          </form>
       </div>
-    );
-  };
-  export default Login;
+  )
+}
+export default Login;

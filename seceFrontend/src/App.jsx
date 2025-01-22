@@ -7,7 +7,7 @@ import Navbar from "./components/FunctionalComponents/Navbar";
 import Signup from "./components/FunctionalComponents/Signup";
 import Login from "./components/FunctionalComponents/Login";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
-function App() {
+function App() { 
   return (
     <BrowserRouter>
       <Navbar/>

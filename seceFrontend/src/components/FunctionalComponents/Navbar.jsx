@@ -1,25 +1,22 @@
 import {Link } from 'react-router-dom'
 import'../../css/Navbar.css'
-class hello{
+import'../../css/signUp.css'
+const Navbar = ({ onLogout }) => {
 
-}
-var obj=new hello();
+    return (<header>
+        <nav>
+            <ol>
 
-const Navbar=()=>{
+                <li><Link to='/' className="link">Home</Link></li>
+                <li><Link to='/About' className="link">About</Link></li>
+                <li><Link to='/Gallery' className="link" >Gallery</Link></li>
+                <li><Link to='/Contact' className="link">Contact</Link></li>
+                <li><Link to='/signUp' className="link">SignUp</Link></li>
 
-    return(<header>
-    <nav>
-     <ol>
-        <li><Link to='/' className="link">Home</Link></li>
-        <li><Link to='/About'className="link">About</Link></li>
-        <li><Link to='/Gallery'className="link">Gallery</Link></li>
-        <li><Link to='/Contact'className="link">Contact</Link></li>
-        <li><Link to='/Signup'className="link">Signup</Link></li>
-        <li><Link to='/Login' className="link">Login</Link></li>
-        
-     </ol>
-    </nav>
+                <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
+            </ol>
+        </nav>
     </header>)
-
 }
+
 export default Navbar;
