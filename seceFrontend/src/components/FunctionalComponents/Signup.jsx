@@ -7,15 +7,15 @@ const Signup=()=>{
             <form>
                 <div className="input">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" placeholder="enter your name"/>
+                    <input type="text" name="name" placeholder="Enter your name"/>
                 </div>
                 <div className="input">
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" placeholder="enter your email" />
+                    <input type="text" name="email" placeholder="Enter your email" />
                 </div>
                 <div className="input">
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password" placeholder="enter your password"/>
+                    <input type="text" name="password" placeholder="Enter your password"/>
                 </div>
                 <Link to='/home' className="btn">Submit</Link>
             </form>
