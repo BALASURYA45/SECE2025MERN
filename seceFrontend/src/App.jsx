@@ -5,7 +5,7 @@ import UseRef from "./components/FunctionalComponents/Hooks/UseRef"
 import Contact from "./components/FunctionalComponents/Contact";
 import Navbar from "./components/FunctionalComponents/Navbar";
 import UseState from "./components/FunctionalComponents/Hooks/UseState";
-import Signup from "./components/FunctionalComponents/signUp";
+import SignUp from "./components/FunctionalComponents/signUp";
 import Login from "./components/FunctionalComponents/Login";
 import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect";
 import UseMemo from "./components/FunctionalComponents/Hooks/UseMemo";
@@ -25,7 +25,7 @@ function App() {
           <Route path="/Contact" element={<Contact/>}></Route>
           <Route path="/use-state" element={<Contact />}></Route>
           
-          <Route path="/Signup" element={<Signup/>}></Route>
+          <Route path="/Signup" element={<SignUp/>}></Route>
           <Route path="/UseState" element={<UseState/>}></Route>
           <Route path="/UseEffect" element={<UseEffect/>}></Route>
           <Route path="/use-effectapi" element={<UseEffectApi/>}></Route>
