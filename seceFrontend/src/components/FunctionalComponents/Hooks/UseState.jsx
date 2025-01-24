@@ -12,5 +12,4 @@ import { useState} from "react";
         </div>
     );
 }
-
 export default UseState;

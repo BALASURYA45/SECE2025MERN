@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+
 import '../../css/Navbar.css'
 import '../../css/signUp.css'
 const Navbar = ({ onLogout }) => {
@@ -21,16 +22,19 @@ const Navbar = ({ onLogout }) => {
                     <div onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                         <span >Hooks</span>
                         {dropdown && (<ul>
+                            <li><Link to='/react-lifecycle-methods' target='_blank' className={dropdown}>reactlifecycle</Link></li>
                             <li><Link to='/useState' target='_blank' className={dropdown}>useState</Link></li>
                             <li><Link to='/useEffect' target='_blank'className={dropdown}>useEffect</Link></li>
                             <li><Link to='/use-ref' target='_blank'className={dropdown}>useRef</Link></li>
                             <li><Link to='/use-memo' target='_blank'className={dropdown}>useMemo</Link></li>
                             <li><Link to='/use-call' target='_blank'className={dropdown}>useCall</Link></li>
+                            <li><Link to='/use-context' target='_blank' className={dropdown}>useContext</Link></li>
                         </ul>)}
                     </div>
                    
                     <li><Link to='/use-effectapi' className="link">UseEffectAPI</Link></li>
                     <li><Link to="/useimg" className="link">useAPIimg</Link></li>
+                    <li><Link to="/memo" className="link">memo</Link></li>
                     <li><Link to='/signUp' className="link">SignUp</Link></li>
                     <li><Link to='/Login' className="link">Login</Link></li>
                     
