@@ -1,20 +1,19 @@
-import {useState} from "react";
-import UpdateNumber1 from "./UpdateNumber";
-import UpdateText2 from "./UpdateText";
-const Memo=()=>{
-    var[num,setNum]=useState(0);
-    var[num1,setNum1]=useState(0);
+import UpdateNumber from "./UpdateNumber"
+import UpdateNum1 from "./UpdateText"
+import { useState } from "react";
 
-    return(
-        <div>
-            <h2>This page is ment for Optimization Process using React.memo</h2>
-            
-            <UpdateNumber1 value={num1}/>
-            <button onClick={()=>setNum(num+1)}>+</button>
-            <UpdateText2 value={num1}/>
-            <button onClick={()=>setNum(num+1)}>+</button>
-            
-        </div>
-    );
-};
-export default Memo;
+const Memo = () => {
+  var[num,setNum]=useState(0);
+  var[num1,setNum1]=useState(0);
+  return (
+    <div>
+      <h2>This page is ment for Optimal</h2>
+      <UpdateNumber value={num}/>
+      <button onClick={() => setNum(num+1)}>+</button>
+      <UpdateNum1 value={num1} />
+      <button onClick={() => setNum1(num1+1)}>+</button>
+    </div>
+  )
+}
+
+export default Memo

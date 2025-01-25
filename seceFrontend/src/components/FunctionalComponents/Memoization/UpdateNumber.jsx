@@ -1,10 +1,12 @@
+import {memo} from 'react'
 
-const UpdateNumber=({value})=>{
-    return(
+const UpdateNumber = ({ value }) => {
+    return (
         <div>
-            <h2>Update Number 1</h2>
-            <h3>Value is {value} </h3>
+            <h2>Update Number </h2>
+            <h3>The value is {value}</h3>
         </div>
-    );
-};
-export default UpdateNumber;
+    )
+}
+
+export default memo(UpdateNumber);

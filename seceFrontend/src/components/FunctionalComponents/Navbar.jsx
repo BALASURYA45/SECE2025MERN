@@ -6,9 +6,14 @@ import '../../css/signUp.css'
 const Navbar = ({ onLogout }) => {
 
     var [dropdown, showDropdown] = useState(false)
+    var [memodropdown, setMemoDropdown] = useState(false);
     const toggleDropdown=()=>{
         showDropdown(dropdown=>!dropdown);
     }
+    const handlememoDropdown = () => {
+        setMemoDropdown(memodropdown => !memodropdown);
+      }
+    
 
     return (
         <header>
@@ -29,9 +34,10 @@ const Navbar = ({ onLogout }) => {
                             <li><Link to='/use-memo' target='_blank'className={dropdown}>useMemo</Link></li>
                             <li><Link to='/use-call' target='_blank'className={dropdown}>useCall</Link></li>
                             <li><Link to='/use-context' target='_blank' className={dropdown}>useContext</Link></li>
+                        
                         </ul>)}
                     </div>
-                   
+                    <li><Link to="/function-class" className="Link" >FunctionInsideClass</Link></li>
                     <li><Link to='/use-effectapi' className="link">UseEffectAPI</Link></li>
                     <li><Link to="/useimg" className="link">useAPIimg</Link></li>
                     <li><Link to="/memo" className="link">memo</Link></li>

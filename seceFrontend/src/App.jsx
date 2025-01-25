@@ -16,6 +16,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactLifecycleMethods from "./components/classComponents/ReactLifeCycleMethods";
 import Student from "./components/FunctionalComponents/Hooks/Student";
 import Memo from "./components/FunctionalComponents/Memoization/Memo";
+import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
+
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path="/use-call" element={<UseCallback />}></Route>
         <Route path="/use-context" element={<Student />}></Route>
         <Route path="/memo" element={<Memo/>}></Route>
+        
+        <Route path="/function-class" element={<FunctionInsideClass />} />
       </Routes>
     </BrowserRouter>
   );
