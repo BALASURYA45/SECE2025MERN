@@ -1,7 +1,7 @@
 import {useState} from "react";
 //Event Handling 
 const About = () => {
-    var [text,setText]=useState("Vijay")
+    var [text,setText]=useState("vijay")
     function handleText(evnt){
         setText(e.target.value)
     }

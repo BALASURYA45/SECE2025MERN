@@ -17,6 +17,10 @@ import ReactLifecycleMethods from "./components/classComponents/ReactLifeCycleMe
 import Student from "./components/FunctionalComponents/Hooks/Student";
 import Memo from "./components/FunctionalComponents/Memoization/Memo";
 import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
+import LazyLoadingWithSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSuspense";
+import UseLocalStorage from "./components/FunctionalComponents/Hooks/UseLocalStorage";
+
+import HoC from "./components/FunctionalComponents/HoC/HoC";
 
 
 function App() {
@@ -44,7 +48,9 @@ function App() {
         <Route path="/use-call" element={<UseCallback />}></Route>
         <Route path="/use-context" element={<Student />}></Route>
         <Route path="/memo" element={<Memo/>}></Route>
-        
+        <Route path="/lazy" element={<LazyLoadingWithSuspense/>}></Route>
+        <Route path="/use-custom" element={<UseLocalStorage/>}></Route>
+        <Route path="/hoc" element={<HoC />}></Route>
         <Route path="/function-class" element={<FunctionInsideClass />} />
       </Routes>
     </BrowserRouter>

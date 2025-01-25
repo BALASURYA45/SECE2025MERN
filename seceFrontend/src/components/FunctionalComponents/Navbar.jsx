@@ -34,6 +34,7 @@ const Navbar = ({ onLogout }) => {
                             <li><Link to='/use-memo' target='_blank'className={dropdown}>useMemo</Link></li>
                             <li><Link to='/use-call' target='_blank'className={dropdown}>useCall</Link></li>
                             <li><Link to='/use-context' target='_blank' className={dropdown}>useContext</Link></li>
+                            <li><Link to='/lazy' target='_blank' className={dropdown}>Suspense</Link></li>
                         
                         </ul>)}
                     </div>
