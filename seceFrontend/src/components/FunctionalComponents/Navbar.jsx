@@ -35,18 +35,18 @@ const Navbar = ({ onLogout }) => {
                             <li><Link to='/use-call' target='_blank'className={dropdown}>useCall</Link></li>
                             <li><Link to='/use-context' target='_blank' className={dropdown}>useContext</Link></li>
                             <li><Link to='/lazy' target='_blank' className={dropdown}>Suspense</Link></li>
-                        
+                            <li><Link to="/function-class" target='_blank' className={dropdown} >FunctionInsideClass</Link></li>
+                            <li><Link to="/custom-hooks2" target='_blank' className={dropdown}>UseCustomHooks2</Link></li>
+                            <li><Link to='/use-effectapi' target='_blank' className={dropdown}>UseEffectAPI</Link></li>
+                            <li><Link to="/useimg" target='_blank' className={dropdown}>useAPIimg</Link></li>
+                            <li><Link to="/memo" target='_blank' className={dropdown}>memo</Link></li>
                         </ul>)}
                     </div>
-                    <li><Link to="/function-class" className="Link" >FunctionInsideClass</Link></li>
-                    <li><Link to='/use-effectapi' className="link">UseEffectAPI</Link></li>
-                    <li><Link to="/useimg" className="link">useAPIimg</Link></li>
-                    <li><Link to="/memo" className="link">memo</Link></li>
-                    <li><Link to='/signUp' className="link">SignUp</Link></li>
-                    <li><Link to='/Login' className="link">Login</Link></li>
                     
-
-                    <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
+                    
+                            <li><Link to='/signUp' className="link">SignUp</Link></li>
+                            <li><Link to='/Login' className="link">Login</Link></li>
+                            <li><Link to='/' className="link" onClick={onLogout}>Logout</Link></li>
                 </ol>
             </nav>
         </header>)

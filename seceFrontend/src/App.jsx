@@ -19,6 +19,7 @@ import Memo from "./components/FunctionalComponents/Memoization/Memo";
 import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
 import LazyLoadingWithSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSuspense";
 import UseLocalStorage from "./components/FunctionalComponents/Hooks/UseLocalStorage";
+import DarkModeToggle from "./components/FunctionalComponents/Hooks/CustomHooks/DarkModeToggle";
 
 import HoC from "./components/FunctionalComponents/HoC/HoC";
 
@@ -52,6 +53,7 @@ function App() {
         <Route path="/use-custom" element={<UseLocalStorage/>}></Route>
         <Route path="/hoc" element={<HoC />}></Route>
         <Route path="/function-class" element={<FunctionInsideClass />} />
+        <Route path="/custom-hooks2" element={<DarkModeToggle />} />
       </Routes>
     </BrowserRouter>
   );
