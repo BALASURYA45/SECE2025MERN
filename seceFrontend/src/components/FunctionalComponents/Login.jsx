@@ -1,23 +1,54 @@
-import { Link } from "react-router-dom"
 import "../../css/signUp.css"
+import {useState} from "react";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
+
 const Login=()=>{
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:3001/login", {
+                email: email,
+                password: password,
+            });
+            console.log(response.data);
+            alert("Login Successful!");
+        } catch (err) {
+            alert("Invalid email or password!");
+        }
+    };
     return (
     
-        <div className="signup">
-            <form method="post" action="http://localhost:3001/login">
-                <div className="input">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" placeholder="enter your email" required/>
+        <div className="login">
+        <h2>Login Page</h2>
+        <form onSubmit={handleSubmit}>
+            <div className="input">
+                <label htmlFor="email">Email</label>
+                <input
+                        type="email"
+                        name="email"
+                        onChange={(event) => setEmail(event.target.value)}
+                        placeholder="Enter your email"
+                        required
+                    />
                 </div>
                 <div className="input">
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password" placeholder="enter your password" required/>
+                    <input
+                        type="password"
+                        name="password"
+                        onChange={(event) => setPassword(event.target.value)}
+                        placeholder="Enter your password"
+                        required
+                    />
                 </div>
-                
-                <Link to='/home' className="btn">Login</Link>
+                <button type="submit">Login</button>
             </form>
         </div>
-        
-    )
-}
-export default Login
+    );
+};
+
+export default Login;
