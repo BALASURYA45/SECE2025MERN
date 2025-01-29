@@ -4,24 +4,40 @@ const mdb=require("mongoose")
 const dotenv=require("dotenv")
 const Signup=require("./models/signupSchema")
 const bcrypt = require('bcrypt');
-const cors = require("cors");
-
 const app=express()
+const jwt = require('jsonwebtoken');
+
 dotenv.config();
-
 app.use(express.urlencoded());
-
-
-app.use(cors());
+ 
 app.use(express.json())
+
 mdb.connect(process.env.MONGODB_URL).then(()=>{
     console.log("connected successfully")
 }).catch((err)=>{
-    console.log("not connected")
+    console.log(err)
 })
 
+const verifyToken=(req,res,next)=>{
+    var token=req.headers.authorization
+    if(!token){
+        res.send("Request Denied")
+}
+try{
+    const user=jwt.verify(token.process.env.SECRET_KEY)
+    console.log(user)
+    req.user=user
+}
+catch(error){
+    console.log(error);
+    res.send("Error in Token")
+}
+
+next();
+}
 app.get('/',(req,res)=>{
-    res.send("hi\n fellows");
+    res.send("hi!Welcome for backend implementation\n fellows");
+    res.json({user: user})
 })
 app.get('/newPath',(req,res)=>{
     res.sendFile(path.join(__dirname,"index.html"));
@@ -30,15 +46,20 @@ app.get('/newPath',(req,res)=>{
 app.get('/newPath2',(req,res)=>{
     res.json({"key":"index.html"});
 })
+app.get('/json',verifyToken,(req,res)=>{
+    console.log("Inside Json Route");
+    res.json({message:"This is a middleware check",user:req.user})
+})
 
-app.post("/signup", (req,res)=>{
+app.post("/signup", async(req,res)=>{
     const {firstname,lastname,email,password}=req.body;
+    var hashedPassword=await bcrypt.hash(password,10);
     try{
         const newCustomer=new Signup({
         firstname:firstname,
         lastname:lastname,
         email:email,
-        password:password
+        password:hashedpassword
     });
     newCustomer.save();
     res.status(201).send("yooo!");
@@ -53,7 +74,12 @@ app.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
     try {
+        const payload={
+                email:existingUser.email,
+                username:existingUser.username
+        }
         const user = await Signup.findOne({ email });
+        const token=jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:'1h'})
 
         if (!user) {
             return res.status(404).json({ message: "User not found" });
