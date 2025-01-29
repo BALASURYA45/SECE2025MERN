@@ -3,10 +3,16 @@ const path=require('path')
 const mdb=require("mongoose")
 const dotenv=require("dotenv")
 const Signup=require("./models/signupSchema")
+const bcrypt = require('bcrypt');
+const cors = require("cors");
+
 const app=express()
 dotenv.config();
 
 app.use(express.urlencoded());
+
+
+app.use(cors());
 app.use(express.json())
 mdb.connect(process.env.MONGODB_URL).then(()=>{
     console.log("connected successfully")
